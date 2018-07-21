@@ -9,6 +9,9 @@ import java.util.Date;
  * Created by Seymur on 7/21/2018.
  */
 public class Customer {
+
+    @NotNull
+    private Long id;
     @Size(min=2, max=30)
     private String name;
 
