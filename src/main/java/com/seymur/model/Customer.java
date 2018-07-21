@@ -22,10 +22,10 @@ public class Customer {
     @NotNull
     @Min(18)
     @Max(100)
-    private Integer age;
+    private int age;
 
     @NotNull
-    private Gender gender;
+    private String gender;
 
     @DateTimeFormat(pattern="MM/dd/yyyy")
     @NotNull @Past
@@ -33,9 +33,6 @@ public class Customer {
 
     private String phone;
 
-    public enum Gender {
-        MALE, FEMALE
-    }
 
     public String getName() {
         return name;
@@ -61,13 +58,7 @@ public class Customer {
         this.age = age;
     }
 
-    public Gender getGender() {
-        return gender;
-    }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
 
     public Date getBirthday() {
         return birthday;
