@@ -10,9 +10,9 @@ import java.util.Date;
  */
 public class Customer {
 
-    @NotNull
+
     private Long id;
-    @Size(min=2, max=30)
+    @Size(min=5, max=30)
     private String name;
 
     @NotEmpty
@@ -34,6 +34,14 @@ public class Customer {
     private String phone;
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -50,15 +58,21 @@ public class Customer {
         this.email = email;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
+    public String getGender() {
+        return gender;
+    }
 
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public Date getBirthday() {
         return birthday;
@@ -74,25 +88,5 @@ public class Customer {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 }
