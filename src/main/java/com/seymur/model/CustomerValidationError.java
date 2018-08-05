@@ -9,8 +9,7 @@ public class CustomerValidationError {
     private Long timestamp;
     private String message;
     private int errorCode;
-   private List<CustomerFieldError> fieldErrors;
-
+    private List<CustomerFieldError> fieldErrors;
 
 
     public Long getTimestamp() {

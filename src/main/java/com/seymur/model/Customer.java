@@ -14,25 +14,19 @@ public class Customer {
     private Long id;
     @Size(min=5, max=30)
     private String name;
-
     @NotEmpty
     @Email
     private String email;
-
     @NotNull
     @Min(18)
     @Max(100)
     private int age;
-
     @NotNull
-    private String gender;
-
-    @DateTimeFormat(pattern="MM/dd/yyyy")
+    private int gender;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @NotNull @Past
     private Date birthday;
-
     private String phone;
-
 
     public Long getId() {
         return id;
@@ -66,11 +60,11 @@ public class Customer {
         this.age = age;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
@@ -89,4 +83,20 @@ public class Customer {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", birthday=" + birthday +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
+
+
 }

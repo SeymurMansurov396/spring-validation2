@@ -19,39 +19,10 @@ import java.util.Date;
 @RequestMapping("/customers")
 public class CustomerController {
 
-    @GetMapping("/test")
-    public ResponseEntity<Customer> test(){
-        Customer customer=new Customer();
-        customer.setAge(1);
-        customer.setBirthday(new Date());
-        customer.setEmail("seymurmansurov168@gmail.com");
-        customer.setGender("kisi");
-        customer.setPhone("0517656347");
-        customer.setName("seymur");
 
-        return new ResponseEntity<Customer>(customer,HttpStatus.OK);
-    }
-
-
-
-    @PostMapping(value = "/save",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Customer> add(@Valid @RequestBody Customer customer){
-
-
-            return new ResponseEntity<Customer>(customer,HttpStatus.OK);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Customer> getCustomerById(@PathVariable long id){
-        Customer customer=new Customer();
-        customer.setAge(1);
-        customer.setBirthday(new Date());
-        customer.setEmail("seymurmansurov168@gmail.com");
-        customer.setGender("kisi");
-        customer.setPhone("0517656347");
-        customer.setName("seymur");
-        return new ResponseEntity<Customer>(customer,HttpStatus.OK);
-    }
+public ResponseEntity<Customer> add(@RequestBody Customer customer){
+    return  new ResponseEntity<Customer>(customer,HttpStatus.CREATED);
+}
 
 
 }
